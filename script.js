@@ -15,18 +15,20 @@ const passError = document.getElementById("password-error");
 const confirmPassError = document.getElementById("confirm-password-error");
 
 
-// ==========================
+
 // STEP 4: UI HELPERS
-// (red / green border)
+// (Class Toggling)
 // ==========================
 
 function showError(input, errorEl, message) {
-    input.style.border = "2px solid red";
+    input.classList.remove("valid");
+    input.classList.add("invalid");
     errorEl.textContent = message;
 }
 
 function showSuccess(input, errorEl) {
-    input.style.border = "2px solid green";
+    input.classList.remove("invalid");
+    input.classList.add("valid");
     errorEl.textContent = "";
 }
 

@@ -52,3 +52,10 @@ button {
   border-radius: 5px;
   cursor: pointer;
 }
+input.valid {
+    border: 2px solid #10b981;
+}
+
+input.invalid {
+    border: 2px solid #ef4444;
+}
