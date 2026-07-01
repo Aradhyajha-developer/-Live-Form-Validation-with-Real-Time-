@@ -16,64 +16,79 @@ const confirmPassError = document.getElementById("confirm-password-error");
 
 
 // ==========================
-// STEP 3: VALIDATION LOGIC
+// STEP 4: UI HELPERS
+// (red / green border)
+// ==========================
+
+function showError(input, errorEl, message) {
+    input.style.border = "2px solid red";
+    errorEl.textContent = message;
+}
+
+function showSuccess(input, errorEl) {
+    input.style.border = "2px solid green";
+    errorEl.textContent = "";
+}
+
+
+// ==========================
+// STEP 3 + 4: VALIDATION LOGIC
 // ==========================
 
 // NAME
 function validateName() {
-
     const name = nameInput.value.trim();
 
     if (name.length < 3) {
-        nameError.textContent = "Name must be at least 3 characters";
+        showError(nameInput, nameError, "Name must be at least 3 characters");
         return false;
     }
 
-    nameError.textContent = "";
+    showSuccess(nameInput, nameError);
     return true;
 }
 
+
 // EMAIL
 function validateEmail() {
-
     const emailPattern = /^[^ ]+@[^ ]+\.[a-z]{2,3}$/;
     const email = emailInput.value.trim();
 
     if (!emailPattern.test(email)) {
-        emailError.textContent = "Enter a valid email";
+        showError(emailInput, emailError, "Enter a valid email");
         return false;
     }
 
-    emailError.textContent = "";
+    showSuccess(emailInput, emailError);
     return true;
 }
+
 
 // PASSWORD
 function validatePassword() {
-
     const password = passInput.value;
 
     if (password.length < 6) {
-        passError.textContent = "Password must be at least 6 characters";
+        showError(passInput, passError, "Password must be at least 6 characters");
         return false;
     }
 
-    passError.textContent = "";
+    showSuccess(passInput, passError);
     return true;
 }
 
+
 // CONFIRM PASSWORD
 function validateConfirmPassword() {
-
     const password = passInput.value;
     const confirmPassword = confirmPassInput.value;
 
     if (confirmPassword !== password) {
-        confirmPassError.textContent = "Passwords do not match";
+        showError(confirmPassInput, confirmPassError, "Passwords do not match");
         return false;
     }
 
-    confirmPassError.textContent = "";
+    showSuccess(confirmPassInput, confirmPassError);
     return true;
 }
 
@@ -89,7 +104,7 @@ confirmPassInput.addEventListener("blur", validateConfirmPassword);
 
 
 // ==========================
-// FORM SUBMIT CHECK
+// FORM SUBMIT
 // ==========================
 
 form.addEventListener("submit", function (e) {
