@@ -6,7 +6,7 @@
 
 body {
   font-family: Arial, sans-serif;
-  background: #f3f4f6;
+  background: #ffcfec;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -14,7 +14,7 @@ body {
 }
 
 .form-container {
-  background: white;
+  background: rgb(178, 252, 209);
   padding: 25px;
   border-radius: 10px;
   width: 100%;
