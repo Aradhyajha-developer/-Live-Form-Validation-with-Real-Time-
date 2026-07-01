@@ -119,5 +119,14 @@ form.addEventListener("submit", function (e) {
     if (isNameValid && isEmailValid && isPasswordValid && isConfirmValid) {
         alert("Registration Successful!");
         form.reset();
+        nameInput.style.border = "";
+emailInput.style.border = "";
+passInput.style.border = "";
+confirmPassInput.style.border = "";
+
+nameError.textContent = "";
+emailError.textContent = "";
+passError.textContent = "";
+confirmPassError.textContent = "";
     }
 });
