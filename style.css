@@ -1,61 +1,238 @@
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
+/* ==========================
+   RESET
+========================== */
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
 }
 
-body {
-  font-family: Arial, sans-serif;
-  background: #ffcfec;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  min-height: 100vh;
+/* ==========================
+   BODY
+========================== */
+
+body{
+
+    font-family:Arial, Helvetica, sans-serif;
+
+    min-height:100vh;
+
+    display:flex;
+
+    justify-content:center;
+
+    align-items:center;
+
+    padding:20px;
+
+    background:linear-gradient(135deg,#2563eb,#4f46e5,#7c3aed);
+
 }
 
-.form-container {
-  background: rgb(178, 252, 209);
-  padding: 25px;
-  border-radius: 10px;
-  width: 100%;
-  max-width: 400px;
-  box-shadow: 0 0 10px rgba(0,0,0,0.1);
+/* ==========================
+   FORM CONTAINER
+========================== */
+
+.form-container{
+
+    width:100%;
+    max-width:430px;
+
+    background:#ffffff;
+
+    padding:30px;
+
+    border-radius:15px;
+
+    box-shadow:0 15px 35px rgba(0,0,0,.18);
+
 }
 
-h2 {
-  text-align: center;
-  margin-bottom: 20px;
+/* ==========================
+   HEADING
+========================== */
+
+h2{
+
+    text-align:center;
+
+    color:#1f2937;
+
+    margin-bottom:25px;
+
+    font-size:30px;
+
 }
 
-form {
-  display: flex;
-  flex-direction: column;
+/* ==========================
+   FORM
+========================== */
+
+form{
+
+    display:flex;
+
+    flex-direction:column;
+
 }
 
-label {
-  margin-top: 10px;
-  margin-bottom: 5px;
+/* ==========================
+   INPUT GROUP
+========================== */
+
+.input-group{
+
+    margin-bottom:18px;
+
 }
 
-input {
-  padding: 10px;
-  border: 1px solid #ccc;
-  border-radius: 5px;
+/* ==========================
+   LABEL
+========================== */
+
+label{
+
+    display:block;
+
+    margin-bottom:6px;
+
+    font-weight:600;
+
+    color:#374151;
+
 }
 
-button {
-  margin-top: 15px;
-  padding: 10px;
-  background: #2563eb;
-  color: white;
-  border: none;
-  border-radius: 5px;
-  cursor: pointer;
-}
-input.valid {
-    border: 2px solid #10b981;
+/* ==========================
+   INPUT
+========================== */
+
+input{
+
+    width:100%;
+
+    padding:12px;
+
+    border:1px solid #d1d5db;
+
+    border-radius:8px;
+
+    outline:none;
+
+    font-size:16px;
+
+    transition:.3s;
+
 }
 
-input.invalid {
-    border: 2px solid #ef4444;
+/* Focus */
+
+input:focus{
+
+    border-color:#2563eb;
+
+    box-shadow:0 0 8px rgba(37,99,235,.25);
+
+}
+
+/* ==========================
+   VALID / INVALID
+========================== */
+
+input.valid{
+
+    border:2px solid #10b981;
+
+}
+
+input.invalid{
+
+    border:2px solid #ef4444;
+
+}
+
+/* ==========================
+   ERROR MESSAGE
+========================== */
+
+.error-msg{
+
+    display:block;
+
+    min-height:18px;
+
+    margin-top:5px;
+
+    font-size:13px;
+
+    color:#ef4444;
+
+}
+
+/* ==========================
+   BUTTON
+========================== */
+
+button{
+
+    width:100%;
+
+    padding:14px;
+
+    border:none;
+
+    border-radius:8px;
+
+    background:#2563eb;
+
+    color:white;
+
+    font-size:16px;
+
+    font-weight:bold;
+
+    cursor:pointer;
+
+    transition:.3s;
+
+}
+
+button:hover{
+
+    background:#1d4ed8;
+
+    transform:translateY(-2px);
+
+}
+
+/* ==========================
+   RESPONSIVE
+========================== */
+
+@media(max-width:480px){
+
+    .form-container{
+
+        padding:20px;
+
+    }
+
+    h2{
+
+        font-size:24px;
+
+    }
+
+    input{
+
+        font-size:15px;
+
+    }
+
+    button{
+
+        font-size:15px;
+
+    }
+
 }

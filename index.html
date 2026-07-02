@@ -1,40 +1,71 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <title>Live Form Validation</title>
-  <link rel="stylesheet" href="style.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Live Form Validation</title>
+
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
-  <div class="form-container">
+    <div class="form-container">
 
-    <h2>Register</h2>
+        <h2>Register</h2>
 
-    <form id="signup-form">
+        <form id="signup-form">
 
-      <label>Full Name</label>
-      <input type="text" id="name" placeholder="Enter your name">
-      <small id="name-error"></small>
+            <!-- Full Name -->
+            <label for="name">Full Name</label>
+            <input
+                type="text"
+                id="name"
+                placeholder="Enter your name"
+                required
+                aria-describedby="name-error"
+            >
+            <small id="name-error" class="error-msg"></small>
 
-      <label>Email</label>
-      <input type="email" id="email" placeholder="Enter your email">
-      <small id="email-error"></small>
+            <!-- Email -->
+            <label for="email">Email Address</label>
+            <input
+                type="email"
+                id="email"
+                placeholder="Enter your email"
+                required
+                aria-describedby="email-error"
+            >
+            <small id="email-error" class="error-msg"></small>
 
-      <label>Password</label>
-      <input type="password" id="password" placeholder="Enter password">
-      <small id="password-error"></small>
+            <!-- Password -->
+            <label for="password">Password</label>
+            <input
+                type="password"
+                id="password"
+                placeholder="Enter your password"
+                required
+                aria-describedby="password-error"
+            >
+            <small id="password-error" class="error-msg"></small>
 
-      <label>Confirm Password</label>
-      <input type="password" id="confirm-password" placeholder="Confirm password">
-      <small id="confirm-password-error"></small>
+            <!-- Confirm Password -->
+            <label for="confirm-password">Confirm Password</label>
+            <input
+                type="password"
+                id="confirm-password"
+                placeholder="Confirm your password"
+                required
+                aria-describedby="confirm-password-error"
+            >
+            <small id="confirm-password-error" class="error-msg"></small>
 
-      <button type="submit">Register</button>
+            <button type="submit">Register</button>
 
-    </form>
+        </form>
 
-  </div>
-  <script src="script.js"></script>
+    </div>
+
+    <script src="script.js"></script>
 
 </body>
 </html>
